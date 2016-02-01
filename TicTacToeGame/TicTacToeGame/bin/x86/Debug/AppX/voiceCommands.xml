@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+
+<VoiceCommands xmlns ="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-gb" Name="SuperGameCommandSet_en-us">
+    
+    <CommandPrefix> my Super Game</CommandPrefix>
+    <Example>Start a game of tic tac toe</Example>
+    
+    <Command Name="newGame">
+      <Example>Start a game of tic tac toe</Example>
+      <ListenFor>[start] [a] new game [of] tic tac toe</ListenFor>
+      <Feedback> Doing my very best to start a new game, please wait...</Feedback>
+      <Navigate Target="MainPage.xml"/>
+    
+    </Command>
+    
+  <Command Name ="makeMove">
+     <Example>Move to a square</Example>
+      <ListenFor>move [to][square] X is {xPosition}, Y is {yPosition}</ListenFor>
+      <Feedback> Trying to make that move for you</Feedback>
+      <Navigate Target="MainPage.xml"/>
+  </Command>
+    
+  <PhraseTopic Label="xPosition"></PhraseTopic>
+  <PhraseTopic Label="yPosition"></PhraseTopic>
+  </CommandSet>
+</VoiceCommands>
+
